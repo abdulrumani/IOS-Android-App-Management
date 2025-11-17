@@ -1,0 +1,155 @@
+/* iOS & Android App Management Plugin Admin Styles */
+
+/* General Wrapper */
+.iaam-admin-wrap {
+    margin-top: 20px;
+    position: relative;
+}
+.iaam-admin-wrap h1 { margin-bottom: 10px; }
+
+/* Main Navigation Tabs */
+.iaam-admin-wrap > h2.nav-tab-wrapper {
+    margin-bottom: 0;
+    border-bottom: 1px solid #ccd0d4;
+}
+
+/* Sub Navigation Tabs */
+.iaam-sub-nav-tab-wrapper {
+    margin-bottom: 0;
+    padding-left: 0;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ccd0d4;
+    padding-top: 5px;
+}
+.iaam-sub-nav-tab-wrapper .nav-tab { padding: 8px 12px; font-size: 13px; }
+
+/* Tab Content Panes - Initial State: HIDDEN */
+.iaam-main-tab-content-wrapper > .iaam-main-tab-content,
+.iaam-sub-tab-content-wrapper > .iaam-sub-tab-content,
+.iaam-vertical-tab-content-wrapper > .iaam-vertical-tab-pane,
+.iaam-ads-settings-content-wrapper > .iaam-vertical-tab-pane { /* .iaam-vertical-tab-pane is also used for Ads Settings sub-sub-tabs */
+    display: none; /* IMPORTANT: Hide all panes by default */
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    border-top: none;
+}
+
+/* Class to show active pane (JS will add/remove this) */
+.iaam-main-tab-content.active-pane,
+.iaam-sub-tab-content.active-pane,
+.iaam-vertical-tab-pane.active-pane {
+    display: block !important; /* IMPORTANT: Override default display:none */
+}
+
+.iaam-main-tab-content-wrapper { margin-top: 0; }
+.iaam-sub-tab-content-wrapper,
+.iaam-ads-settings-content-wrapper {
+    /* border-top: 1px solid #ccd0d4; */ /* Can be removed if parent border is enough */
+    /* margin-top: -1px; */
+}
+
+/* Section Titles within Panes */
+.iaam-main-tab-content h3,
+.iaam-sub-tab-content h3,
+.iaam-vertical-tab-pane h3 {
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+}
+.iaam-main-tab-content h4,
+.iaam-sub-tab-content h4,
+.iaam-vertical-tab-pane h4 {
+    font-size: 1.1em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Form Tables */
+.form-table { margin-top: 0; }
+.form-table th { width: 250px; padding: 15px 10px 15px 0; vertical-align: top; }
+.form-table td { padding: 10px 10px 10px 0; vertical-align: top; }
+.form-table input[type="text"],
+.form-table input[type="url"],
+.form-table input[type="email"],
+.form-table input[type="number"],
+.form-table select,
+.form-table textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #8c8f94;
+}
+.form-table input[type="number"].small-text { max-width: 100px; }
+.form-table textarea { min-height: 100px; }
+.form-table .description { font-size: 0.9em; color: #555d66; margin-top: 4px; }
+
+/* Toggle Switch */
+.iaam-toggle-switch { position: relative; display: inline-block; width: 50px; height: 28px; vertical-align: middle; }
+.iaam-toggle-switch.small-switch { width: 40px; height: 22px; }
+.iaam-toggle-switch input { opacity: 0; width: 0; height: 0; }
+.iaam-toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .3s; border-radius: 28px; }
+.small-switch .iaam-toggle-slider { border-radius: 22px; }
+.iaam-toggle-slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: white; transition: .3s; border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+.small-switch .iaam-toggle-slider:before { height: 14px; width: 14px; left: 4px; bottom: 4px; }
+input:checked + .iaam-toggle-slider { background-color: #0073aa; }
+input:focus + .iaam-toggle-slider { box-shadow: 0 0 0 1px #0073aa, 0 0 2px 1px rgba(0, 115, 170, 0.8); }
+input:checked + .iaam-toggle-slider:before { transform: translateX(22px); }
+.small-switch input:checked + .iaam-toggle-slider:before { transform: translateX(18px); }
+.iaam-toggle-label-text { margin-left: 8px; vertical-align: middle; }
+
+/* Vertical Tabs */
+.iaam-vertical-tabs-container { display: flex; border: none; margin-top: 15px; }
+.iaam-vertical-tabs-nav { width: 220px; min-width: 180px; border-right: 1px solid #ccd0d4; background-color: #f0f0f1; padding-top: 10px; }
+.iaam-vertical-tabs-nav .nav-tab { display: block; padding: 10px 15px; margin: 0; border: none; border-bottom: 1px solid #e0e0e0; background-color: transparent; color: #2271b1; text-decoration: none; font-weight: 500; width: 100%; box-sizing: border-box; text-align: left; border-radius: 0; }
+.iaam-vertical-tabs-nav .nav-tab:last-child { border-bottom: none; }
+.iaam-vertical-tabs-nav .nav-tab.nav-tab-active,
+.iaam-vertical-tabs-nav .nav-tab:hover { background-color: #fff; color: #000; box-shadow: inset 3px 0 0 #0073aa; }
+.iaam-vertical-tabs-nav .nav-tab:hover { background-color: #f5f5f5; }
+.iaam-vertical-tabs-nav .nav-tab.nav-tab-active { font-weight: 600; }
+.iaam-vertical-tab-content-wrapper { flex-grow: 1; padding-left: 20px; background-color: #fff; }
+.iaam-vertical-tab-content-wrapper .form-table th { width: 230px; }
+
+/* Save Button */
+.iaam-admin-wrap .submit { padding: 20px 0; clear: both; }
+.iaam-admin-wrap .submit input[type="submit"] { padding: 10px 25px; font-size: 14px; height: auto; }
+
+/* Notices */
+.iaam-admin-wrap .notice { margin-left: 0; margin-right: 0; margin-bottom: 15px; }
+
+/* REST API Table */
+.iaam-rest-api-table { width: 100%; border-collapse: collapse; margin-top: 15px; box-shadow: 0 1px 1px rgba(0,0,0,.04); }
+.iaam-rest-api-table th,
+.iaam-rest-api-table td { border: 1px solid #e5e5e5; padding: 12px; text-align: left; vertical-align: top; }
+.iaam-rest-api-table th { background-color: #f8f9fa; font-weight: 600; }
+.iaam-rest-api-table code { background-color: #f0f0f1; padding: 3px 6px; border-radius: 3px; font-family: Consolas, Monaco, monospace; font-size: 0.95em; border: 1px solid #e0e0e0; }
+.iaam-rest-api-table .copy-url-button { margin-left: 10px; padding: 4px 8px; font-size: 12px; }
+.http-method { display: inline-block; padding: 3px 8px; border-radius: 4px; font-weight: bold; text-transform: uppercase; font-size: 0.85em; color: #fff; line-height: 1.2; }
+.http-method-get { background-color: #0073aa; }
+.http-method-post { background-color: #46b450; }
+.http-method-put { background-color: #ffb900; color:#333; }
+.http-method-delete { background-color: #dc3232; }
+
+/* Ads Placement Table */
+.iaam-ads-placement-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 13px; }
+.iaam-ads-placement-table th,
+.iaam-ads-placement-table td { border: 1px solid #e5e5e5; padding: 10px; text-align: center; vertical-align: middle; }
+.iaam-ads-placement-table thead th { background-color: #f8f9fa; font-weight: 600; vertical-align: middle; }
+.iaam-ads-placement-table tbody th[scope="row"] { text-align: left; font-weight: 600; background-color: #fdfdfd; }
+
+hr { border: 0; border-top: 1px solid #ddd; margin: 30px 0; }
+
+/* admin-styles.css میں شامل کریں */
+.wp-list-table th#app_notification,
+.wp-list-table td.app_notification {
+    width: 150px; /* یا آپ کی ضرورت کے مطابق */
+    text-align: center;
+}
+.wp-list-table td.app_notification .button {
+    vertical-align: middle;
+}
